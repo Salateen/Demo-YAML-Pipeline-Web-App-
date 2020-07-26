@@ -14,9 +14,10 @@ steps:
   inputs:
     command: 'publish'
     publishWebProjects: true
+    arguments: '--output $(Build.ArtifactStagingDirectory)'
 
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: '$(Build.SourcesDirectory)'
+    targetPath: '$(Build.ArtifactStagingDirectory)'
     artifact: 'webapp'
     publishLocation: 'pipeline'
