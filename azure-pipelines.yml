@@ -23,6 +23,17 @@ steps:
     azureSubscription: 'Microsoft Azure Internal Consumption Active(be5282a4-2cfe-47d1-a1e6-8f3f862d5874)'
     appType: 'webApp'
     appName: 'YAMLPipelineWebApp56687'
+    deployToSlotOrASE: true
+    resourceGroupName: 'yamldemo'
+    slotName: 'staging'
+    package: '$(Build.ArtifactStagingDirectory)'
+    deploymentMethod: 'auto'
+
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Microsoft Azure Internal Consumption Active(be5282a4-2cfe-47d1-a1e6-8f3f862d5874)'
+    appType: 'webApp'
+    appName: 'YAMLPipelineWebApp56687'
     package: '$(Build.ArtifactStagingDirectory)'
     deploymentMethod: 'auto'
 - task: PublishPipelineArtifact@1
