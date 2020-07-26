@@ -22,7 +22,7 @@ steps:
   inputs:
     azureSubscription: 'Microsoft Azure Internal Consumption Active(be5282a4-2cfe-47d1-a1e6-8f3f862d5874)'
     appType: 'webApp'
-    appName: 'DemoYAMLPipelineWebApp'
+    appName: 'YAMLPipelineWebApp56687'
     package: '$(Build.ArtifactStagingDirectory)'
     deploymentMethod: 'auto'
 - task: PublishPipelineArtifact@1
