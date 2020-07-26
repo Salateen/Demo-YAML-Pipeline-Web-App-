@@ -16,15 +16,14 @@ steps:
     command: 'publish'
     publishWebProjects: false
     projects: 'YAML Pipeline Web App/YAML Pipeline Web App.csproj'
-    arguments: '--output $(Build.ArtifactStagingDirectory)\webapp'
-    zipAfterPublish: false
+    arguments: '--output $(Build.ArtifactStagingDirectory)'
     modifyOutputPath: false
 - task: AzureWebApp@1
   inputs:
     azureSubscription: 'Microsoft Azure Internal Consumption Active(be5282a4-2cfe-47d1-a1e6-8f3f862d5874)'
     appType: 'webApp'
     appName: 'DemoYAMLPipelineWebApp'
-    package: '$(Build.ArtifactStagingDirectory)\webapp'
+    package: '$(Build.ArtifactStagingDirectory)'
     deploymentMethod: 'auto'
 - task: PublishPipelineArtifact@1
   inputs:
