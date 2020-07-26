@@ -16,7 +16,8 @@ steps:
     command: 'publish'
     publishWebProjects: false
     projects: 'YAML Pipeline Web App/YAML Pipeline Web App.csproj'
-    arguments: '--output $(Build.ArtifactStagingDirectory)'
+    arguments: '--output $(Build.ArtifactStagingDirectory)\webapp'
+    zipAfterPublish: false
     modifyOutputPath: false
 
 - task: PublishPipelineArtifact@1
