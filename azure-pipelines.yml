@@ -13,7 +13,8 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'publish'
-    publishWebProjects: true
+    publishWebProjects: false
+    projects: 'YAML Pipeline Web App/YAML Pipeline Web App.csproj'
     arguments: '--output $(Build.ArtifactStagingDirectory)'
 
 - task: PublishPipelineArtifact@1
